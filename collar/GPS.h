@@ -1,5 +1,5 @@
-#ifndef __TESTING__
-#define __TESTING__
+#ifndef __GPS_H__
+#define __GPS_H__
 
 class GPSCoords{
     public:
