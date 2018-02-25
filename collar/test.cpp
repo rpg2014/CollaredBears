@@ -1,13 +1,13 @@
 #include <iostream>
-#include "testing.h"
+#include "GPS.h"
 
 
 
 
 int main(){
-GPSCoords v(72.382f,7298.2828f);
+GPSCoords v(72.382f,78.2828f);
 
-std::cout << "lat" << v.getLat() <<","<<v.getLon()<<std::endl;
+std::cout <<v.getString()<<std::endl;
 
 
 }
