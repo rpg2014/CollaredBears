@@ -21,7 +21,7 @@ void setup()
   }
   Serial.println("\nSetting id to " + id);
   
-  mySerial.write("ATID3331\r");
+  mySerial.write("ATID3332\r");
   delay(500);
   while(mySerial.available()){
     Serial.write(mySerial.read());
