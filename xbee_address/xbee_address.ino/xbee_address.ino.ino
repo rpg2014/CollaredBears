@@ -33,14 +33,19 @@ void setup()
     Serial.write(mySerial.read());
   }
 
-  Serial.print("SH is ");
+  Serial.print("\nSH is ");
   mySerial.write("ATSH\r");
   while(mySerial.available()){
     Serial.write(mySerial.read());
   }
 
-  Serial.print("SL is ");
+  Serial.print("\nSL is ");
   mySerial.write("ATSL\r");
+  while(mySerial.available()){
+    Serial.write(mySerial.read());
+  }
+  Serial.print("\nwriting ");
+  mySerial.write("ATWR\r");
   while(mySerial.available()){
     Serial.write(mySerial.read());
   }
