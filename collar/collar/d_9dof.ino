@@ -5,14 +5,11 @@
 #include <Adafruit_BNO055.h>
 
 
-  const int rows = 10;
-  const int columns = 3;
-  //this creates a 3*10 matrix for storing the x,y,z euler angles
-  float orientation[rows][columns];
+ 
 
 //fuck it just do it all in ino files and methods
 //have to pass in the array and the numbers added to it. 
-void readData(float orientation[][3],int numberOfReadings)
+void getOrientation(float orientation[][3],int numberOfReadings)
 {
 
   
@@ -30,6 +27,15 @@ void readData(float orientation[][3],int numberOfReadings)
   
   
 }
+
+
+//TODO: fill this in.  its gonna look pretty similar to whats above.
+void getAcceleration(float accel[][3],int numberOfReadings)
+{
+
+
+}
+
 
 
 
