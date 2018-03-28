@@ -1,7 +1,7 @@
 
 
 
-
+//I dont even know how to start with these
 
 //this method will return true or false depending on weither there is another xbee in range that says its ready to accpet the data
 bool readyToSend()

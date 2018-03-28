@@ -32,10 +32,21 @@ void getOrientation(float orientation[][3],int numberOfReadings)
 //TODO: fill this in.  its gonna look pretty similar to whats above.
 void getAcceleration(float accel[][3],int numberOfReadings)
 {
-
+  for(int i = 0; i<=numberOfReadings; i++)
+  {
+    imu::Vector<3> accelerometer = bno.getVector(Adafruit_BNO055::VECTOR_ACCELEROMETER);
+    accel[i][0] = accelerometer.x();
+    accel[i][1] = accelerometer.y();
+    accel[i][2] = accelerometer.z();
+    
+  }
 
 }
 
+
+int8_t getTemp(){
+  return bno.getTemp();
+}
 
 
 
