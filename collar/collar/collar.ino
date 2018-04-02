@@ -40,6 +40,6 @@ void loop() {
 
 
   //this is an example of using the getOrientation method
-  getOrientation(orientation, 10);
+  getOrientation(orientation, numberOfReadings);
   //the orientation array is now populated with data which we can then manipulate and save.  the accelerometer method works the same.
 }
