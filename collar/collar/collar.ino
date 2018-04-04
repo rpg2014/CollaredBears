@@ -28,6 +28,7 @@ float orientation[rows][columns];
 //array for storing accelerometer data.  same size as orinetation array.
 float accel[rows][columns];
 
+//will be [date,time,lat,long];
 float gpsData[4];
 //sdcard variable
 File dataFile;
@@ -55,7 +56,12 @@ int secondsToMilliseconds(int seconds){
 
 //this still needs to be done
 String convertArraysToString(float orientation[][3], float accel[][3],float gpsData[4],int8_t temp){
-  return "filler";
+  String gpsDataString = String(gpsData[0]+','+gpsData[1]+','+gpsData[2]+','+gpsData[3]+',');
+  String orientString = String(String(orientation[0][0])+","+String(orientation[0][1])+","+String(orientation[0][2])+",");
+  String accelString = String(String(accel[0][0])+","+String(accel[0][1])+","+String(accel[0][2])+",");
+  String tempString = String(temp);
+  
+  return String(gpsDataString + orientString + accelString + tempString);
 }
 
 
