@@ -15,7 +15,7 @@ SoftwareSerial xbee(3, 2); // RX, TX
   
 Adafruit_BNO055 bno = Adafruit_BNO055(55);
 //number of readings for 9d0f sensor
-const int numberOfReadings = 10;
+const int numberOfReadings = 1;
 
 const int secondsBetweenReadings = 10;
 
@@ -53,8 +53,7 @@ int secondsToMilliseconds(int seconds){
 }
 
 
-
-//this still needs to be done
+//i hope this works
 String convertArraysToString(float orientation[][3], float accel[][3],float gpsData[4],int8_t temp){
   String gpsDataString = String(gpsData[0]+','+gpsData[1]+','+gpsData[2]+','+gpsData[3]+',');
   String orientString = String(String(orientation[0][0])+","+String(orientation[0][1])+","+String(orientation[0][2])+",");
