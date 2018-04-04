@@ -11,8 +11,15 @@ bool readyToSend()
 
 
 //method that sends the data.  returns true if successful?(might not be possible to tell if successful though).  
-bool sendData(String data)
+// as the .send() method sends one byte at at time we can just give it the char array
+bool sendData(char line[])
 {
+  for( unsigned int a = 0; a < sizeof(line)/sizeof(line[0]); a = a + 1 ){
+    xbee.write(line[a]);
+  }
+
   
 }
+
+
 

@@ -6,11 +6,18 @@
 //sdcard includes
 #include <SPI.h>
 #include <SD.h>
+
+//for xbee
+#include <SoftwareSerial.h>
+
+
+SoftwareSerial xbee(3, 2); // RX, TX
   
 Adafruit_BNO055 bno = Adafruit_BNO055(55);
 //number of readings for 9d0f sensor
 const int numberOfReadings = 10;
 
+const int secondsBetweenReadings = 10;
 
 //array for storing the orientation data
 const int rows = numberOfReadings;
@@ -21,6 +28,7 @@ float orientation[rows][columns];
 //array for storing accelerometer data.  same size as orinetation array.
 float accel[rows][columns];
 
+float gpsData[4];
 //sdcard variable
 File dataFile;
 
@@ -35,11 +43,19 @@ void setup() {
 
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
 
 
-  //this is an example of using the getOrientation method
-  getOrientation(orientation, numberOfReadings);
-  //the orientation array is now populated with data which we can then manipulate and save.  the accelerometer method works the same.
+
+
+int secondsToMilliseconds(int seconds){
+  return seconds*1000;
 }
+
+
+
+//this still needs to be done
+String convertArraysToString(float orientation[][3], float accel[][3],float gpsData[4],int8_t temp){
+  return "filler";
+}
+
+

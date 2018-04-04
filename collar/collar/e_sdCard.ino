@@ -22,7 +22,7 @@ long readLineFromFile(char line[], long positionToStartFrom)
   char currentChar = ' ';
   int counter = 0;
   //while we dont have a new line add each character to the char array buffer.  
-  while(currentChar!= '\n')
+  while(currentChar!= '\n' && dataFile.available())
   {
     currentChar = dataFile.read();
     if (currentChar!='\n') 
