@@ -9,9 +9,10 @@ String dataFileName = "data.csv";
 //this method will save just the data that we want to send through the xbee
 void saveData(String dataToSave)
 {
-  dataFile =  SD.open(dataFileName, FILE_WRITE);
-  dataFile.print(dataToSave);
-  dataFile.close();
+  Serial.println(dataToSave);
+//  dataFile =  SD.open(dataFileName, FILE_WRITE);
+//  dataFile.print(dataToSave);
+//  dataFile.close();
   
 }
 
