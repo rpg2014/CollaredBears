@@ -57,7 +57,7 @@ void useInterrupt(boolean v) {
 }
 
 uint32_t timer = millis();
-void getGPS(float gpsData[])                     // run over and over again
+void getGPS(int gpsData[], float gpsFloat[])                     // run over and over again
 {
   // in case you are not using the interrupt above, you'll
   // need to 'hand query' the GPS, not suggested :(
@@ -88,13 +88,13 @@ void getGPS(float gpsData[])                     // run over and over again
     timer = millis(); // reset the timer
 
   //store values related to date and time
-    float gps[1] = GPS.day;
-    float gps[2] = GPS.month;
-    float gps[3] = GPS.year;
+    gpsData[0] = GPS.day;
+    gpsData[1] = GPS.month;
+    gpsData[2] = GPS.year;
 
-    float gps[4] = GPS.hour;
-    float gps[5] = GPS.minute;
-    float gps[6] = GPS.seconds;
+    gpsData[3] = GPS.hour;
+    gpsData[4] = GPS.minute;
+    gpsFloat[0] = GPS.seconds;
     
 //    Serial.print(GPS.hour, DEC); Serial.print(':');
 //    Serial.print(GPS.minute, DEC); Serial.print(':');
@@ -117,11 +117,11 @@ void getGPS(float gpsData[])                     // run over and over again
 //      Serial.print(", "); 
 //      Serial.println(GPS.longitudeDegrees, 4);
 
-        gps[7] = GPS.latitude;
-        gps[8] = GPS.longitude;
+        gpsFloat[1] = GPS.latitude;
+        gpsFloat[2] = GPS.longitude;
     } else {
-        gps[7] = 0;
-        gps[8] = 0;
+        gpsFloat[1] = 0;
+        gpsFloat[2] = 0;
     }
   }
 }
